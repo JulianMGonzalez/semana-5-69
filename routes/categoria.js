@@ -5,14 +5,12 @@ const routerx = require('express-promise-router');
 const categoriaController = require('../controllers/CategoriaController');
 const auth = require('../middlewares/auth');
 
-
 const router = routerx();
 
-router.post('/add', categoriaController.add);
-router.get('/list', categoriaController.list);
-router.put('/update',categoriaController.update);
-router.put('/activate',categoriaController.activate);
-router.put('/deactivate',categoriaController.deactivate);
-
+router.post('/add', auth.verifyVendedor, categoriaController.add);
+router.get('/list', auth.verifyVendedor, categoriaController.list);
+router.put('/update', auth.verifyVendedor, categoriaController.update);
+router.put('/activate', auth.verifyVendedor, categoriaController.activate);
+router.put('/deactivate', auth.verifyVendedor, categoriaController.deactivate);
 
 module.exports = router;

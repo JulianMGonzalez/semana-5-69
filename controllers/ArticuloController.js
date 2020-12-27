@@ -16,7 +16,6 @@ module.exports = {
     },
     list: async(req, res, next) => {
         try {
-         
             const register = await models.Articulo.findAll();
             if(register){
                 res.status(200).json(register);

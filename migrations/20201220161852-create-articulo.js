@@ -21,15 +21,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       categoriaId: {
-        type: Sequelize.INTEGER,
-      //allowNull: false,
-        references: { // User belongsTo Company 1:1
-          model: 'Categoria',
-          key: 'id'
+        type: Sequelize.INTEGER
       },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL'
-    },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
