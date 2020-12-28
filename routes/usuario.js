@@ -7,7 +7,7 @@ const auth = require('../middlewares/auth');
 
 const router = routerx();
 
-router.post('/add', auth.verifyUsuario, usuarioController.add);
+router.post('/add', usuarioController.add);
 router.get('/list', usuarioController.list);
 router.put('/update', auth.verifyUsuario, usuarioController.update);
 router.put('/activate', auth.verifyAdministrador, usuarioController.activate);
